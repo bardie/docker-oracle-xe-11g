@@ -26,7 +26,7 @@ docker build -t wnameless/oracle-xe-11g .
 
 ## Installation(DockerHub)
 ```
-docker pull wnameless/oracle-xe-11g-r2
+docker pull wnameless/oracle-xe-11g
 ```
 SSH server has been removed since 18.04, please use "docker exec"
 
@@ -34,27 +34,27 @@ SSH server has been removed since 18.04, please use "docker exec"
 
 Run with 1521 port opened:
 ```
-docker run -d -p 49161:1521 wnameless/oracle-xe-11g-r2
+docker run -d -p 49161:1521 wnameless/oracle-xe-11g
 ```
 
 Run this, if you want the database to be connected remotely:
 ```
-docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g-r2
+docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
 ```
 
 For performance concern, you may want to disable the disk asynch IO:
 ```
-docker run -d -p 49161:1521 -e ORACLE_DISABLE_ASYNCH_IO=true wnameless/oracle-xe-11g-r2
+docker run -d -p 49161:1521 -e ORACLE_DISABLE_ASYNCH_IO=true wnameless/oracle-xe-11g
 ```
 
 Enable XDB user with default password: xdb, run this:
 ```
-docker run -d -p 49161:1521 -e ORACLE_ENABLE_XDB=true wnameless/oracle-xe-11g-r2
+docker run -d -p 49161:1521 -e ORACLE_ENABLE_XDB=true wnameless/oracle-xe-11g
 ```
 
 For APEX user:
 ```
-docker run -d -p 49161:1521 -p 8080:8080 wnameless/oracle-xe-11g-r2
+docker run -d -p 49161:1521 -p 8080:8080 wnameless/oracle-xe-11g
 ```
 
 ```
